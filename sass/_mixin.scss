@@ -1,0 +1,109 @@
+
+$breakpoints: (
+  mobile: 768px,
+  tablet: 1024px,
+  laptop: 1240px,
+  desktop-lg: 1800px
+);
+
+@mixin breakpoint($breakpoint, $direction) {
+
+  // Get the breakpoint value.
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  
+  @if $direction == min {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+} 
+// MOBILE
+.content{
+  @include breakpoint(mobile,min ){
+    &__texts{
+      gap: 4rem;
+      .title{
+        font-size: 3.4rem;
+      }
+      .paragraph{
+        font-size: 2rem;
+      }
+      .cta{
+        width: 35%;
+      }
+
+    }
+  }
+}
+.footer{
+  @include breakpoint(mobile,min){
+  }
+}
+// TABLET
+body{
+  @include breakpoint(tablet,min ){
+    height: 100vh;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+    align-content: center;
+    background-image: url('/assets/images/bg-desktop.svg');
+    background-size: cover;  
+    padding-inline: 2.5rem;
+    .hero{
+      padding: 0;
+      &__mockup{
+        max-width: 100%;
+      }
+    }
+    .content{
+      padding-inline: 4rem;
+      text-align: left;
+      &__texts{
+        gap: 1.5rem;
+        align-items: flex-start;
+        .title{
+          font-size: 2.5rem;
+        }
+        .paragraph{
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .footer{
+      width: 100%;
+      grid-column: 2 / 3;
+      .footer__icons{
+        justify-content: flex-end;
+        margin-inline-end: 4rem;
+      }
+    }
+  }
+}
+// Desktop-lg
+body{
+  @include breakpoint(desktop-lg,min){
+    background-size: contain;
+    .content{
+      &__texts{
+        margin-inline-end: 20rem;
+        gap: 2.8rem;
+        .title{
+          font-size: 3rem;
+        }
+        .paragraph{
+          font-size: 1.8rem;
+        }
+        .cta{
+          width: 30%;
+          font-size: 1.8rem;
+          border-radius: 3rem;
+        }
+      }
+
+    }
+    .footer{
+      margin-inline-end: 20rem;
+    }
+  }
+}   
+ 

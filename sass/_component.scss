@@ -1,0 +1,35 @@
+$font-text:'Open Sans', sans-serif;
+$font-heading:'Poppins', sans-serif;
+$color-Violet: hsl(257, 40%, 49%);
+$color-SoftMagenta: hsl(300, 69%, 71%);
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; 
+ }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  padding-block: 4.9rem;
+  padding-inline: 4.9rem;
+}
+.cta{
+  padding: 1.5rem 2rem;
+  width: 60%;
+  border-radius: 2.5rem;
+  border: none;
+  color: $color-Violet;
+  font-size: 1.5rem;
+  box-shadow: 1px 6px 27px 0px rgba(0,0,0,0.64);
+-webkit-box-shadow: 1px 6px 27px 0px rgba(0,0,0,0.64);
+-moz-box-shadow: 1px 6px 27px 0px rgba(0,0,0,0.64);
+  cursor: pointer;
+  &:hover{
+    background-color:$color-SoftMagenta;
+    color: white;
+  }
+}

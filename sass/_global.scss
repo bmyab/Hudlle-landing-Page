@@ -1,0 +1,77 @@
+@use  'component';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+body{
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  font-family: component.$font-text;
+  font-size: 1.6rem;
+  background-color:component.$color-Violet;
+  background-image: url('/assets/images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  overflow-x: hidden;
+}
+.hero{
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  &__logo{
+    max-width: 40%;
+  }
+  &__mockup{
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
+.content{
+  text-align: center;
+  color: #ffff;
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 3rem;
+  &__texts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    .title{
+      font-family: component.$font-heading;
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+    .paragraph{
+      font-size: 1.45rem;
+      line-height: 3rem;
+      font-weight: 200;
+      color: #ddd;
+    }
+  }
+}
+.footer{
+  padding-block: 2.5rem;
+  .footer__icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    gap: 2rem;
+    .icon{
+      border: 1px solid white;
+      width: 4rem;
+      height: 4rem;
+      line-height: 4rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    :hover{
+      color: component.$color-SoftMagenta;
+      border: 1px solid component.$color-SoftMagenta;
+
+    }
+  }
+  
+}
